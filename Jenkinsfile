@@ -40,6 +40,15 @@ pipline {
             }
         }
     }
+    post {
+        success {
+            slackSend(color: 'good', message: "Gallery App deployment successful. Job Name - ${JOB_NAME} | Build number ${BUILD_NUMBER} | link ${APP_LINK}")
+        }
 
-    
+        failure {
+            emailext attachLog: true, body: 'See attached build log report', recipientProviders: [buildUser()], subject: "Job Name - ${JOB_NAME} | Build number ${BUILD_NUMBER}"
+            slackSend(color: 'danger', message: "Gallery App deployment faield. Job Name - ${JOB_NAME} | Build number ${BUILD_NUMBER}")
+        }
+    }
+
 }
