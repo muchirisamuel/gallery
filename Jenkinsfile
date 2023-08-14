@@ -5,7 +5,16 @@ pipline {
         nodejs 'NodeJS-Latest'
     }
 
-     environment {
+    environment {
         APP_LINK = 'https://young-mountain-18198-00c30b751509.herokuapp.com'
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                echo 'Clone App Repository'
+                git 'https://github.com/eliud-kinyanjui/gallery'
+            }
+        }
     }
 }
