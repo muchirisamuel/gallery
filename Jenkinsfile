@@ -17,4 +17,13 @@ pipline {
             }
         }
     }
+
+        stage('Install Dependancies') {
+            steps {
+                echo 'Run npm install'
+                sh 'npm install'
+            }
+        }   
+        
+         
 }
