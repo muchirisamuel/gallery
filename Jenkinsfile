@@ -24,6 +24,13 @@ pipline {
                 sh 'npm install'
             }
         }   
+
+         stage('Run Tests') {
+            steps {
+                echo 'Run npm run test'
+                sh 'npm run test'
+            }
+        }
+
         
-         
 }
