@@ -1,0 +1,7 @@
+pipline {
+    agent any
+
+    tools {
+        
+    }
+}
